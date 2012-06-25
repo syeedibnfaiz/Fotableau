@@ -1,0 +1,34 @@
+==============
+	README
+This is a tableau based automated theorem prover
+for first order logic.
+(c) Syeed Ibn Faiz
+==============
+Step 1: Compilation
+
+make
+
+Step 2: Running the program
+
+./fotableau.out
+
+The following conventions have to be followed:
+1) A Constant name should start with a capital letter
+2) A variable name should start with a small letter
+3) A Predicate name should start with a capital letter
+4) 'all' represents universal quantifier. For example: all(x, P(x))
+5) 'exists' represents existential quantifier. For example: exists(x, P(x))
+6) '>', '|', '&' and '~' represent implication, disjunction, conjunction and negation respectively.
+
+Some Examples:
+exists(x,((P(x)>Q(x)) & (Q(x)>R(x))) > (P(x)>R(x)))
+exists(x, exists(y, P(x)>Q(y))) > exists(y, exists(x, P(y)>Q(x)))
+all(x, P(x)) > exists(x, P(x))
+all(x, exists(y, all(z, exists(w, R(x,y) | ~R(w,z)))))
+all(x, P(x)) > exists(y, P(y))
+exists(x, P(x)) > all(y, P(y))
+all(x, all(y, P(x) | P(y))) > exists(x, exists(y, P(x) & P(y)))
+all(x, all(y, P(x) & P(y))) > exists(x, exists(y, P(x) | P(y)))
+
+
+
